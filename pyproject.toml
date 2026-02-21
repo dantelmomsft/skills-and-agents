@@ -1,0 +1,37 @@
+[project]
+name = "my-app"
+version = "0.1.0"
+description = "description of my app"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "azure-identity==1.24.0",
+    "agent-framework-core==1.0.0b260212",
+    "agent-framework-orchestrations==1.0.0b260212",
+    "azure-monitor-opentelemetry",
+    "dependency-injector"
+]
+
+[tool.uv]
+prerelease = "if-necessary-or-explicit"
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.4.1",
+    "pytest-asyncio==1.1.0",
+    "pytest-dotenv",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+env_files = ["tests/.env"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
