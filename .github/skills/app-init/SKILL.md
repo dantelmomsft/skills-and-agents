@@ -4,7 +4,7 @@ description: Init the code base from scratch with a basic agent app
 ---
 
 1. run ```bash
-python download_folder.py pragma81/agent-python-kb app-shell --branch main --output .
+python download_folder.py dantelmomsft/agent-python-kb app-shell --branch main --output .
 ```
 2. create the .env.dev file based on env.dev.example and store it in the app folder.
 3. ask the user to provide the values for properties in .env.dev file, and fill in the values in .env.dev file.
